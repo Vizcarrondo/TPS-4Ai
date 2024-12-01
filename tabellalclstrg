@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    <title>Inserimento Dati</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">Dati Personali</h1>
+
+    <form id="dataForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" required><br>
+
+        <label for="indirizzo">Indirizzo:</label>
+        <input type="text" id="indirizzo" required><br>
+
+        <label for="citta">Citta':</label>
+        <input type="text" id="citta" required><br><br>
+
+        <button style="background-color: firebrick;" type="button" onclick="inserisciDati()">Inserisci</button>
+    </form>
+    <script>
+        let datiMatrice = [];
+
+        function inserisciDati() {
+            let nome = document.getElementById("nome").value;
+            let cognome = document.getElementById("cognome").value;
+            let indirizzo = document.getElementById("indirizzo").value;
+            let citta = document.getElementById("citta").value;
+
+            if (nome === "" || cognome === "" || indirizzo === "" || citta === "") {
+                alert("Per favore, completa tutti i campi.");
+                return;
+            }
+
+            datiMatrice.push([nome, cognome, indirizzo, citta]);
+
+            document.getElementById("dataForm").reset();
+
+            
+        
+
+        let datiMemorizzati = localStorage.getItem('dati') || '';
+            datiMemorizzati += dati + ";"; 
+            localStorage.setItem('dati', datiMemorizzati);
+
+            document.getElementById("dataForm").reset();
+
+            location.href = 'local_storage_tabella.html';
+        }
+    </script>
+
+</body>
+</html>
