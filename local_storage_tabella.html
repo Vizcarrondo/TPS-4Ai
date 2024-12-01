@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Tabella Anagrafica</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabella Anagrafica</h1>
+
+    <table id="datiTabella">
+        <thead>
+            <tr>
+                <th style="background-color: firebrick;">Nome</th>
+                <th style="background-color: firebrick;">Cognome</th>
+                <th style="background-color: firebrick;">Indirizzo</th>
+                <th style="background-color: firebrick;">Citta'</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        window.onload = function() {
+            let datiMemorizzati = localStorage.getItem('dati');
+            
+            if (!datiMemorizzati) {
+                return;
+            }
+
+            let arrayDati = datiMemorizzati.split(";");
+
+            let tbody = document.getElementById("datiTabella").getElementsByTagName("tbody")[0];
+
+            for (let i = 0; i < arrayDati.length; i++) {
+                if (arrayDati[i].trim() === "") continue;  
+
+                let dati = arrayDati[i].split(",");
+
+                let tr = document.createElement("tr");
+
+                for (let j = 0; j < dati.length; j++) {
+                    let td = document.createElement("td");
+                    td.textContent = dati[j];
+                    tr.appendChild(td);
+                }
+
+                tbody.appendChild(tr);
+            }
+        }
+    </script>
+
+</body>
+</html>
