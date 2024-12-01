@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Ordinamento Array</title>
+    <style>
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+        #asc, #desc {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: slateblue; text-align: center;">
+
+    <h1 style="color: rgba(195, 195, 193, 0.829);">Ordinamento di un Array</h1>
+
+    <label style="color: rgba(195, 195, 193, 0.829);" for="inputArray">Inserisci i numeri separati :</label>
+    <input style="background-color: black; color: antiquewhite;" type="text" id="inputArray" placeholder="Esempio: 5 3 8 2 9" />
+
+    <button style="border-width:thick;" onclick="ordinaArray()">ORDINA </button>
+
+    <div style="border-color: black;" id="asc" class="output">
+        <strong>Ordinato in modo crescente:</strong>
+        <div style="color: antiquewhite;" id="ascResult"></div>
+    </div>
+
+    <div style="border-color: black;" id="desc" class="output">
+        <strong>Ordinato in modo decrescente:</strong>
+        <div style="color: antiquewhite;" id="descResult"></div>
+    </div>
+
+    <script>
+        function ordinaArray() {
+            const input = document.getElementById('inputArray').value;
+
+            const arr = input.split(' ').map(Number);
+
+            if (arr.some(isNaN)) {
+                alert('Per favore, inserisci solo numeri separati da spazio.');
+                return;
+            }
+
+            const arrCrescente = [...arr].sort((a, b) => a - b);
+
+            const arrDecrescente = [...arr].sort((a, b) => b - a);
+
+            document.getElementById('ascResult').textContent = arrCrescente.join(' ');
+            document.getElementById('descResult').textContent = arrDecrescente.join(' ');
+        }
+    </script>
+
+</body>
+</html>
