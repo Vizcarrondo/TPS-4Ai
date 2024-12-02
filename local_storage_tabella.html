@@ -44,7 +44,7 @@
 
     <h1>Tabella Anagrafica</h1>
 
-     <button style="background-color: firebrick;" type="button" onclick="inserisciDati()">Inserisci</button>
+     <button style="background-color: firebrick;" type="button" onclick="inserisciDati()">Ricevi i dati</button>
     
     <table id="datiTabella">
         <thead>
@@ -63,7 +63,7 @@
         window.onload = function() {
             let datiAnagrafici = localStorage.getItem('dati');
             console.log(datiAnagrafici);
-            if (!datiMemorizzati) {
+            if (!datiAnagrafici) {
                 return;
             }
             
