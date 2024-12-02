@@ -49,13 +49,13 @@
 
     <script>
         window.onload = function() {
-            let datiMemorizzati = localStorage.getItem('dati');
+            let datiAnagrafici = localStorage.getItem('dati');
             
             if (!datiMemorizzati) {
                 return;
             }
 
-            let arrayDati = datiMemorizzati.split(";");
+            let arrayDati = datiAnagrafici.split(";");
 
             let tbody = document.getElementById("datiTabella").getElementsByTagName("tbody")[0];
 
