@@ -50,11 +50,11 @@
     <script>
         window.onload = function() {
             let datiAnagrafici = localStorage.getItem('dati');
-            
+            console.log(datiAnagrafici);
             if (!datiMemorizzati) {
                 return;
             }
-
+            
             let arrayDati = datiAnagrafici.split(";");
 
             let tbody = document.getElementById("datiTabella").getElementsByTagName("tbody")[0];
