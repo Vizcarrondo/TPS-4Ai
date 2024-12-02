@@ -44,7 +44,7 @@
 
     <h1>Tabella Anagrafica</h1>
 
-     <button style="background-color: firebrick;" type="button" onclick="window.onload()">Ricevi i dati</button>
+     <button style="background-color: firebrick;" type="button" onclick="bossx()">Ricevi i dati</button>
     
     <table id="datiTabella">
         <thead>
@@ -60,7 +60,7 @@
     </table>
 
     <script>
-        window.onload = function() {
+        function bossx() {
             let datiAnagrafici = localStorage.getItem('dati');
             console.log(datiAnagrafici);
             if (!datiAnagrafici) {
