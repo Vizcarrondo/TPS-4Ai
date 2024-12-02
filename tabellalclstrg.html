@@ -93,7 +93,7 @@
 
         let datiMemorizzati = localStorage.getItem('dati') || '';
             datiMemorizzati += dati + ";"; 
-            localStorage.setItem('dati', datiMemorizzati);
+            localStorage.setItem('local_storage_tabella', datiMemorizzati);
 
             document.getElementById("dataForm").reset();
 
