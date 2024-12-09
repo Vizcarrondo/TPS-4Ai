@@ -3,7 +3,7 @@
     <title>Inserimento Dati</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 20px;
             background-color: #f4f4f9;
             color: #333;
@@ -88,15 +88,13 @@
             document.getElementById("dataForm").reset();
 
             
-        
+            console.log(datiMatrice);
 
-        let datiMemorizzati = localStorage.getItem('dati') || '';
-            datiMemorizzati += dati + ";"; 
-            localStorage.setItem('datiAnagrafici', datiMemorizzati);
+            localStorage.setItem('datiAnagrafici', datiMatrice);
 
             document.getElementById("dataForm").reset();
 
-            location.href = 'https://vizcarrondo.github.io/TPS-4Ai/local_storage_tabella.html';
+            location.href = 'dioporco2.htm';
         }
     </script>
 
