@@ -61,11 +61,8 @@
 
     <script>
         function bossx() {
-            let datiAnagrafici = localStorage.getItem('dati');
+            let datiAnagrafici = localStorage.getItem('datiAnagrafici');
             console.log(datiAnagrafici);
-            if (!datiAnagrafici) {
-                return;
-            }
             
             let arrayDati = datiAnagrafici.split(";");
 
