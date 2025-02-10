@@ -46,7 +46,7 @@
 
     <script>
 
-      let alfabeto = ["!", "*", "N", "9", "%", "-", "§", "@", ">", "4", "3", "G", "°", "E", "}", "I", "ù", ";", "R", "+", "?", "E", "n", "3", "T", "a", "k", "5", "m", "b", "I", "M", "6", "B", "i", "g", "A", "t", "N", "S", "y", "2", "U", "x", "z", "7", "O", "f", "P", "l", "R", "d", "J", "K", "H", "e", "W", "1", "c", "v", "Q","0"];
+      let alfabeto = ["!", "*", "N", "9", "%", "-", "§", "@", ">", "4", "3", "G", "°", "E", "}", "I", "ù", ";", "R", "+", "?", "#", "^", "€"];
 
       let testo = "";
       let testoCodificato = "";
@@ -69,18 +69,14 @@
 
         for (let i = 0; i < testo.length; i++) {
           let lettera = testo.charAt(i);
-          if (alfabeto.includes(lettera)) {
             for (let j = 0; j < alfabeto.length; j++) {
-              if (alfabeto[j] == lettera) {
                 lettera = alfabeto[(j + 13) % alfabeto.length];
                 break;
               }
             }
           }
           output += lettera;
-        }
         return output;
-      }
 
       function decrpit() {
 
